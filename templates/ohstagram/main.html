@@ -389,7 +389,7 @@
                     <div>
                         <textarea class="form-control" style="width: 276px; height: 400px" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
-                    <button type="button" class="btn btn-primary" style="width: 100%">
+                    <button id="feed_create_button" type="button" class="btn btn-primary" style="width: 100%">
                         공유하기
                     </button>
                 </div>
@@ -411,6 +411,11 @@
             overflow : 'hidden'
         });
     });
+
+    $('#feed_create_button').click(function () {
+        alert("공유하기 눌렀다")
+        
+    })
 
     $('.img_upload_space')
         .on("dragover", dragOver)
