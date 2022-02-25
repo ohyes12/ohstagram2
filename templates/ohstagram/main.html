@@ -243,8 +243,8 @@
                     <p class="feed_txt"><b> {{ feed.user_id }} </b> {{ feed.content }}</p>
                 </div>
                 <div class="feed_reply">
-                    <span class="feed_txt"> <b> mychew </b> 불안불안합니다 보고하는것도 </span>
-                    <span class="feed_txt"> <b> cho </b> 시간이 너무 없습니다 ㅋㅋ </span>
+                    <span class="feed_txt"> <b> teosl </b> 불안불안합니다 보고하는것도 </span>
+                    <span class="feed_txt"> <b> chko </b> 시간이 너무 없습니다 ㅋㅋ </span>
                 </div>
             </div>
         {% endfor %}
@@ -381,13 +381,19 @@
                 </div>
 
             </div>
-            <div style="display: flex; flex-direction: row;">
-                <div class="img_upload_space" style="width: 500px; height: 540px;margin-top: 10px">
+            <div style="border-top: solid 1px gray; display: flex; flex-direction: row;margin-top: 10px">
+                <div class="img_upload_space" style="width: 500px; height: 540px;">
 
                 </div>
-                <div>
-                    글 입력하자
+                <div style="border-left: solid 1px gray">
+                    <div>
+                        <textarea class="form-control" style="width: 276px; height: 400px" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" style="width: 100%">
+                        공유하기
+                    </button>
                 </div>
+
             </div>
 
 
