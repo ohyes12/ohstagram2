@@ -345,6 +345,23 @@
     </div>
     <div class="modal_overlay">
         <div class="modal_window">
+            <div style="display: flex; flex-direction: row; justify-content: space-between">
+
+                <div style="width: 40px; background: gray">
+
+                </div>
+                <div>
+                    새 이미지 업로드
+                </div>
+                <div style="width: 40px; background: gray">
+                     <span class="material-icons-outlined">close</span>
+                </div>
+
+            </div>
+     <div class="img_upload_space" style="background: aqua; width: 778px; height: 540px;margin-top: 10px">
+
+            </div>
+
         </div>
     </div>
 
@@ -359,6 +376,42 @@
             overflow : 'hidden'
         });
     });
+
+    $('.img_upload_space')
+        .on("dragover", dragOver)
+        .on("dragleave", dragOver)
+        .on("drop", uploadFiles);
+
+    function dragOver(e) {
+        e.stopPropagation();
+        e.preventDefault();
+        if (e.type == "dragover") {
+            $(e.target).css({
+                "background-color": "black",
+                "outline-offset": "-20px"
+            });
+        } else {
+            $(e.target).css({
+                "background-color": "gray",
+                "outline-offset": "-10px"
+            });
+        }
+    }
+
+    function uploadFiles(e) {
+        e.stopPropagation();
+        e.preventDefault();
+
+        dragOver(e); //1
+
+        e.dataTransfer = e.originalEvent.dataTransfer; //2
+        var files = e.target.files || e.dataTransfer.files;
+
+        if (files.length > 1) {
+            alert('하나만 올려라.');
+            return;
+        }
+    }
 </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
